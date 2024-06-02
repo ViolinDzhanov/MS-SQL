@@ -1,0 +1,13 @@
+CREATE TABLE Manufacturers
+(
+	ManufacturerID INT PRIMARY KEY IDENTITY,
+	[Name] VARCHAR(50) NOT NULL,
+	EstablishedOn DATETIME2
+)
+
+CREATE TABLE Models
+(
+	ModelID INT PRIMARY KEY IDENTITY(100, 1),
+	[Name] VARCHAR(50) NOT NULL,
+	ManufacturerID INT FOREIGN KEY REFERENCES Manufacturers(ManufacturerID)
+)
